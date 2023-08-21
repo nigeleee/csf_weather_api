@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form class="form-group" [formGroup]="form" (ngSubmit) = "search()">
+        <label class="form-label">Enter City Name for Weather Info</label>
+        <br>
+        <input class="form-control" type="text" formControlName="input">
+        <div class="mt-2">
+          <button type=""submit class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<br>
+<div *ngIf="weather" class="container">
+  <h5>Forecast: {{ weather.description }}</h5>
+  <h5>Temperature: {{ weather.temp - 273.15 | number }}</h5>
+  <h5>Pressure: {{ weather.pressure | number }}</h5>
+  <h5>Humidity: {{ weather.humidity | number }}</h5>
+</div>
+
